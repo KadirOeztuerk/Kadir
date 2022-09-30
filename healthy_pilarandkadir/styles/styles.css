@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+/*Standart Einstellungen*/
+
+:root {
+
+    --leading: 140%;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.oben{
+    margin: 0 1em;
+}
+/*OBEN BLAU--------------*/
+
+section > header{
+    padding: 1.2em 0;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.ground{
+    background: #307D99 url('../images/bg.jpg');
+    background-position: 10% 83%;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+.ground p{
+    font-weight: bold;
+    margin: 0 0em 3em;
+}
+
+
+
+/*body > div > section >*/
+h1 > span{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/*body > div > section > */
+h1{
+    font-size: 2.5rem;
+    margin: 2em 0 1.2em;
+    
+}
+
+h1 > span::before{
+    content: "";
+    background: #00BFFF;
+    width: 3em;
+    height: 0.4em; 
+    position: absolute;
+    bottom: 0;
+    margin-left: -0.4em;
+    z-index: -1;
+}
+
+.eingabefeld{
+    background: white;
+    margin:  2em -1em 0;
+    padding: 1em 0;
+}
+
+.linke-seite{
+    color: #307D99;
+}
+
+input[type="text"]{
+    width: 310px;
+    height: 40px;
+    border-radius: 5px;
+    box-sizing: border-box; /*setzt auf gleiche höhe*/
+}
+
+.eingabefeld p{ 
+    color: gray;
+    padding: 0.4em 0;
+    font-weight: normal;
+    font-size: 0.9rem;
+
+}
+
+input[type="button"]{
+    background: #F89104;
+    width: 15em;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input[type="button"]:hover{
+    background: #dd8204;
+}
+
+/*UNTEN-----------------*/
+
+.authentic{
+    color: #000;
+
+    position: relative;
+}
+
+h3{
+    font-size: 1.7rem;
+    
+}
+
+.rechte_seite{
+    text-align: center;
+    margin: 3em 1em;
+}
+
+.rechte_seite h2{
+    text-transform: uppercase;
+    position: relative;
+    line-height: 130%;
+    font-size: 2rem;
+}
+
+h2::before{
+    content: "";
+    background: #54bbe0;
+    width: 7.3em;
+    height: 0.5em;
+    position: absolute;
+    top: 2em;
+
+    z-index: -1;
+}
+
+img{
+    width: 110%;
+    margin-left: -1em;
+}
+
+p {
+    line-height: var(--leading)
+}
+
+.uberlagerung {
+    position: absolute;
+    height: 138vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    place-content: center;
+    display: none;
+    opacity: 0;
+    background-size: cover;
+}
+
+.animate-uberlagerung {
+    animation: uberlagerung 3s forwards;
+}
+
+/*Tablet------------*/
+
+@media (min-width: 730px) {
+
+    .eingabefeld {
+        margin: 0 5em;
+    }
+
+}
+
+/*Desktop-----------*/
+
+@media (min-width: 930px) {
+
+    .ground {
+        text-align: left;
+        background-size: cover;
+    }
+
+    .oben{
+        margin-left: 7em;
+    }
+
+    .eingabefeld {
+        padding: 2em 2em 0;
+        margin: 2em 0 0;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .ground p {
+        font-weight: bold;
+        
+    }
+
+    .ground section{
+        width: 65%;
+    }
+
+    form > div > h3{
+        margin-top: 0;
+        margin-bottom: 3px;
+        font-size: 1.2rem;
+    }
+
+    form {
+        display: flex;
+    }
+
+    .linke-seite{
+        width: 70%;
+    }
+
+    label {
+        margin: 0;
+    }
+
+    input[type="button"]{
+        font-size: 0.9em;
+        margin-left: 1em;
+        margin-top: 4.2%;
+        padding: .2em 0;
+        width: 40%;
+    }
+
+    section.authentic {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: "bowl content";
+    }
+
+    .rechte_seite{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    h2{
+        margin: 0;
+    }
+
+    img{
+        grid-area: bowl;
+    }
+
+}
+
+.oben {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+    opacity: 0;
+    transform: translateY(-2em);
+    } 
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes uberlagerung{
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+       
+        opacity: 0;
+       
+    }
+}
