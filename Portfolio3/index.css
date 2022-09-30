@@ -1,0 +1,327 @@
+
+body {
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+
+img {
+    width: 100%;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('https://assets.codepen.io/2621168/shoe.jpg');
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    /*overflow: hidden;*/
+}
+
+body > div.wrapper > header > nav > svg > path{
+    height:0.5em;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+}
+
+nav>.close {
+    float: left;
+    margin: 2em;
+    width: 3.5em;
+    
+}
+
+nav>.close>path:hover{
+    fill: red;
+}
+
+nav>ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8em;
+}
+
+nav > ul > li > a{
+    color: black;
+    padding: .75em 2em;
+    
+}
+nav > ul > li > a:hover{
+    color: red;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header>svg{
+    width: 2.3em;
+    margin-top: .6em;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size: 1.4rem;
+}
+
+section.hero {
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+    stroke: transparent;
+    stroke-width: 0px;    
+}
+
+section.hero>.down-arrow>path{
+    fill: white;
+}
+
+section.hero>.down-arrow{
+    stroke: white;
+    position: absolute;
+    bottom: 8em;
+    width: 1em;
+    animation: moveArrow 1s alternate-reverse infinite;
+}
+
+
+.more-info {
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .desc {
+        line-height: 1.5rem;
+    }
+}
+
+.open-nav {
+    transform: translateX(0%);
+}
+
+@media only screen and (min-width: 480px) {
+
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+@media only screen and (min-width: 720px) {
+
+    .menu {
+        display: none;
+    }
+
+    section.hero>.down-arrow>path{
+        fill: red;
+    }
+
+    nav > ul > li{
+        display: inline;
+        margin: 0;
+    }
+
+    nav > ul > li> a{
+        color: white;
+        padding: .5em 1.5em;
+        font-size: .9rem;
+        display: inline;
+    }
+
+    nav > ul > a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: flex;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+        /*
+        span {
+            color: red;
+        }*/
+    }
+
+    body > div.wrapper > header > a > span{
+        color: red;
+    }
+
+    .close{
+        display:none;
+    }
+
+    section.hero {
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        .subhead {
+            margin-bottom: 3em;
+        }
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;
+
+            path {
+                fill: black;
+            }
+        }
+    }
+
+
+
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+    /*
+        img {
+            width: 25em;
+            height: 11em;
+        }
+
+        .content {
+            text-align: right;
+            width: 25em;
+        }
+    */
+    }
+
+    .feature > .content{
+        text-align: right;
+        width: 25em;
+    }
+
+    .feature> img{
+        width: 25em;
+        
+    }
+
+    .feature.left {
+        grid-template-areas: 
+            "left right";
+        
+        img {
+            grid-area: left;
+        }
+
+ 
+
+        .content {
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+    }
+
+    
+
+}
+
+body > div.wrapper > section.more-info > div.feature.left > img{
+    grid-area: left;
+}
+
+@media only screen and (min-width: 800px) {
+    .wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px)
+    }
+    to {
+        transform: translateY(0)
+    }
+}
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px)
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
