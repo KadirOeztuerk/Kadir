@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 10px;
+    font-family: 'clan OT', Arial, Helvetica, sans-serif;
+    min-width: 400px;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #DBB88E;
+    border-radius: 5px;
+}
+
+button{
+    background-color: #DBB88E;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 5px 0;
+    border: none;
+    border: 2px solid #DBB88E;
+}
+
+#delete-btn{
+    background-color: white;
+    color: #DBB88E;
+    border: 2px solid #DBB88E;
+}
+
+ul {
+    margin:20px 0;
+    list-style: none;
+    padding:0;
+}
+
+li{
+    margin: 5px 0;
+}
+
+li a {
+    color:#DBB88E;
+}
